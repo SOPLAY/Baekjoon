@@ -1,0 +1,11 @@
+let input = process.platform === "linux" ? require("fs").readFileSync("/dev/stdin").toString().trim() : userInput;
+input = +input;
+let sum = 0;
+let index = 1;
+while (sum < input) sum += index++;
+index -= 1;
+sum -= index;
+let n1 = input - sum;
+let n2 = sum + index + 1 - input;
+let answer = index % 2 === 0 ? `${n1}/${n2}` : `${n2}/${n1}`;
+console.log(answer);
